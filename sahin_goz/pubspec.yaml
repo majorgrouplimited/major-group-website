@@ -1,0 +1,50 @@
+name: sahin_goz
+description: >
+  Şahin Göz — Drone İzleme Sistemi.
+  İnşaat sahası uzaktan izleme ve güvenlik analizi için
+  geliştirilmiş profesyonel drone kontrol uygulaması.
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+  flutter: ">=3.19.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # ── State Management ─────────────────────────────────────────
+  flutter_riverpod: ^2.5.1
+
+  # ── Video / Streaming ────────────────────────────────────────
+  flutter_vlc_player: ^7.4.1
+
+  # ── Screen Management ────────────────────────────────────────
+  wakelock_plus: ^1.2.8
+
+  # ── Typography ───────────────────────────────────────────────
+  google_fonts: ^6.2.1
+
+  # ── Networking ───────────────────────────────────────────────
+  http: ^1.2.1
+  web_socket_channel: ^2.4.5
+
+  # ── Utilities ────────────────────────────────────────────────
+  intl: ^0.19.0
+  equatable: ^2.0.5
+  shared_preferences: ^2.2.3
+  permission_handler: ^11.3.1
+  connectivity_plus: ^6.0.3
+  flutter_animate: ^4.5.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icons/
+    - assets/images/

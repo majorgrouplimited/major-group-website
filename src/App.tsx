@@ -4,16 +4,18 @@
  */
 
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { 
-  Smartphone, 
-  Code2, 
-  Palette, 
-  Rocket, 
-  ChevronRight, 
-  Mail, 
-  MapPin, 
-  Globe
+import {
+  Smartphone,
+  Code2,
+  Palette,
+  Rocket,
+  ChevronRight,
+  Mail,
+  MapPin,
+  Eye,
+  ArrowRight,
 } from 'lucide-react';
 
 const Navbar = () => (
@@ -22,6 +24,7 @@ const Navbar = () => (
       <div className="text-2xl font-bold tracking-tighter">major<span className="text-black">.</span></div>
       <div className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-600">
         <a href="#services" className="hover:text-black transition-colors">Services</a>
+        <a href="#products" className="hover:text-black transition-colors">Products</a>
         <a href="#contact" className="px-5 py-2.5 bg-black text-white rounded-full hover:bg-zinc-800 transition-colors">
           Start a Project
         </a>
@@ -109,6 +112,66 @@ const Services = () => {
   );
 };
 
+const Products = () => {
+  const products = [
+    {
+      icon: <Eye className="w-6 h-6" />,
+      title: "Sahin Goz",
+      description: "AI-powered drone monitoring system for construction site surveillance with real-time alerts and multi-zone management.",
+      tag: "Surveillance",
+      link: "/sahingoz/index.html",
+    },
+  ];
+
+  return (
+    <section id="products" className="py-24 px-6">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex items-end justify-between mb-16">
+          <div>
+            <h2 className="text-sm font-bold uppercase tracking-widest text-emerald-600 mb-4">Our products</h2>
+            <h3 className="text-4xl font-bold tracking-tight">Built for the real world.</h3>
+          </div>
+        </div>
+        <div className="grid md:grid-cols-1 max-w-lg gap-8">
+          {products.map((product, idx) => (
+            <motion.div
+              key={idx}
+              whileHover={{ y: -5 }}
+              className="relative p-8 bg-zinc-900 rounded-3xl border border-zinc-800 text-white overflow-hidden group"
+            >
+              <div className="absolute top-0 right-0 w-40 h-40 bg-emerald-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+              <div className="relative">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-emerald-400">
+                    {product.icon}
+                  </div>
+                  <span className="text-xs font-medium text-zinc-500 uppercase tracking-wider">{product.tag}</span>
+                </div>
+                <h4 className="text-xl font-bold mb-3">{product.title}</h4>
+                <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+                  {product.description}
+                </p>
+                {product.link ? (
+                  <a href={product.link} className="inline-flex items-center gap-2 text-sm font-medium text-emerald-400 hover:text-emerald-300 transition-colors group/link">
+                    View demo
+                    <ChevronRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                  </a>
+                ) : (
+                  <span className="inline-flex items-center gap-2 text-sm font-medium text-zinc-600">
+                    Coming soon
+                  </span>
+                )}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+        <div className="mt-8 flex justify-center md:hidden">
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const Contact = () => (
   <section id="contact" className="py-24 px-6">
     <div className="max-w-7xl mx-auto">
@@ -190,17 +253,26 @@ const Footer = () => (
   </footer>
 );
 
-export default function App() {
+function HomePage() {
   return (
     <div className="min-h-screen bg-white font-sans text-black selection:bg-emerald-100 selection:text-emerald-900">
       <Navbar />
       <main>
         <Hero />
         <Services />
-        
+        <Products />
         <Contact />
       </main>
       <Footer />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+{/* sahingoz served as static HTML in public/sahingoz/ */}
+    </Routes>
   );
 }
