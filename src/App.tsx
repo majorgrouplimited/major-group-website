@@ -137,7 +137,7 @@ const Contact = () => (
               </div>
               <div>
                 <h4 className="font-bold mb-1">Email Us</h4>
-                <p className="text-zinc-600">hello@major.studio</p>
+                <p className="text-zinc-600">admin@majorgrup.tc</p>
               </div>
             </div>
           </div>
