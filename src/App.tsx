@@ -36,7 +36,7 @@ const Navbar = () => (
 const Hero = () => (
   <section className="pt-40 pb-20 px-6">
     <div className="max-w-7xl mx-auto">
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -92,7 +92,7 @@ const Services = () => {
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
               whileHover={{ y: -5 }}
               className="p-8 bg-white rounded-3xl border border-zinc-100 shadow-sm"
@@ -182,7 +182,7 @@ const Contact = () => (
           <p className="text-xl text-zinc-600 mb-12">
             Ready to start your next project? We're here to help you bring your vision to life.
           </p>
-          
+
           <div className="space-y-6">
             <div className="flex items-start gap-4">
               <div className="w-10 h-10 bg-zinc-100 rounded-full flex items-center justify-center shrink-0">
@@ -205,7 +205,7 @@ const Contact = () => (
             </div>
           </div>
         </div>
-        
+
         <div className="bg-zinc-900 p-10 rounded-[2rem] text-white">
           <form className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
@@ -245,7 +245,7 @@ const Footer = () => (
   <footer className="py-12 px-6 border-t border-zinc-100">
     <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
       <div className="text-xl font-bold tracking-tighter">major<span className="text-black">.</span></div>
-      
+
       <div className="text-sm text-zinc-400">
         © {new Date().getFullYear()} major. All rights reserved.
       </div>
@@ -272,7 +272,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-{/* sahingoz served as static HTML in public/sahingoz/ */}
+      {/* sahingoz served as static HTML in public/sahingoz/ */}
     </Routes>
   );
 }
