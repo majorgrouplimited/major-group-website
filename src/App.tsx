@@ -121,6 +121,13 @@ const Products = () => {
       tag: "Surveillance",
       link: "/sahingoz/index.html",
     },
+    {
+      icon: <Eye className="w-6 h-6" />,
+      title: "Sahin Goz Aktif",
+      description: "AI-powered active construction safety monitoring with real-time hazard detection, worker tracking, and automated compliance alerts.",
+      tag: "Safety",
+      link: "/sahingozaktif/index.html",
+    },
   ];
 
   return (
