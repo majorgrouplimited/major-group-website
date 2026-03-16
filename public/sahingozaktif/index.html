@@ -816,6 +816,7 @@ html, body {
           <div class="cam-overlay"><div class="cnum">K-1</div><div class="cname">KAMERA 1</div></div>
         </div>
         <div class="cam-btn" data-cam="2" onclick="selectCamera(2)">
+          <video autoplay muted loop playsinline preload="metadata" src="/sahingozaktif/videos/video-2.mp4"></video>
           <div class="cam-dark"></div>
           <div class="cstatus"></div>
           <div class="cam-overlay"><div class="cnum">K-2</div><div class="cname">KAMERA 2</div></div>
@@ -826,21 +827,25 @@ html, body {
           <div class="cam-overlay"><div class="cnum">K-3</div><div class="cname">KAMERA 3</div></div>
         </div>
         <div class="cam-btn" data-cam="4" onclick="selectCamera(4)">
+          <video autoplay muted loop playsinline preload="metadata" src="/sahingozaktif/videos/video-4.mp4"></video>
           <div class="cam-dark"></div>
           <div class="cstatus"></div>
           <div class="cam-overlay"><div class="cnum">K-4</div><div class="cname">KAMERA 4</div></div>
         </div>
         <div class="cam-btn" data-cam="5" onclick="selectCamera(5)">
+          <video autoplay muted loop playsinline preload="metadata" src="/sahingozaktif/videos/video-5.mp4"></video>
           <div class="cam-dark"></div>
           <div class="cstatus"></div>
           <div class="cam-overlay"><div class="cnum">K-5</div><div class="cname">KAMERA 5</div></div>
         </div>
         <div class="cam-btn" data-cam="6" onclick="selectCamera(6)">
+          <video autoplay muted loop playsinline preload="metadata" src="/sahingozaktif/videos/video-6.mp4"></video>
           <div class="cam-dark"></div>
           <div class="cstatus"></div>
           <div class="cam-overlay"><div class="cnum">K-6</div><div class="cname">KAMERA 6</div></div>
         </div>
         <div class="cam-btn" data-cam="7" onclick="selectCamera(7)">
+          <video autoplay muted loop playsinline preload="metadata" src="/sahingozaktif/videos/video-7.mp4"></video>
           <div class="cam-dark"></div>
           <div class="cstatus"></div>
           <div class="cam-overlay"><div class="cnum">K-7</div><div class="cname">KAMERA 7</div></div>
@@ -974,13 +979,25 @@ function selectCamera(n) {
   // Hide all detection boxes (if they exist)
   dbIds.forEach(id => { const el = document.getElementById(id); if (el) el.classList.remove('visible'); });
 
-  // Reset and play video
-  video.currentTime = 0;
+  // Video map per camera
+  const videoMap = {
+    1: '/sahingozaktif/videos-ai/video-1-annotated.mp4?v=2',
+    2: '/sahingozaktif/videos-ai/video-2-annotated.mp4?v=2',
+    4: '/sahingozaktif/videos-ai/video-4-annotated.mp4?v=2',
+    5: '/sahingozaktif/videos-ai/video-5-annotated.mp4?v=2',
+    6: '/sahingozaktif/videos-ai/video-6-annotated.mp4?v=2',
+    7: '/sahingozaktif/videos-ai/video-7-annotated.mp4?v=2',
+  };
+  const annotatedSrc = videoMap[n] || videoMap[1];
+
+  // Set and play left video
+  video.src = annotatedSrc;
+  video.load();
   video.play().catch(() => {});
 
   // Update phone camera preview video
   const camVid = document.getElementById('camPreviewVideo');
-  camVid.src = '/sahingozaktif/videos-ai/video-1-annotated.mp4?v=2';
+  camVid.src = annotatedSrc;
   camVid.style.display = 'block';
   camVid.load();
   camVid.play().catch(() => {});

@@ -139,7 +139,7 @@ const Products = () => {
             <h3 className="text-4xl font-bold tracking-tight">Built for the real world.</h3>
           </div>
         </div>
-        <div className="grid md:grid-cols-1 max-w-lg gap-8">
+        <div className="grid md:grid-cols-2 max-w-3xl gap-8">
           {products.map((product, idx) => (
             <motion.div
               key={idx}
