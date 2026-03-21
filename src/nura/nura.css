@@ -59,3 +59,21 @@
 .nura-delay-300 { animation-delay: 300ms; }
 .nura-delay-400 { animation-delay: 400ms; }
 .nura-delay-500 { animation-delay: 500ms; }
+
+@keyframes nura-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+@keyframes nura-scroll-dot {
+  0% { cy: 8; opacity: 1; }
+  100% { cy: 20; opacity: 0; }
+}
+
+.nura-bounce {
+  animation: nura-bounce 2s ease-in-out infinite;
+}
+
+.nura-scroll-dot {
+  animation: nura-scroll-dot 1.5s ease-in-out infinite;
+}

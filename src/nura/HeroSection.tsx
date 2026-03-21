@@ -66,10 +66,10 @@ const HeroSection = () => {
               Download for iOS
             </a>
             <a
-              href="#features"
+              href="#"
               className="inline-flex items-center justify-center h-14 px-8 rounded-2xl font-semibold text-[hsl(200_19%_18%)] bg-[hsl(0_0%_96%)] border border-[hsl(120_10%_90%)] transition-all duration-200 hover:bg-[hsl(0_0%_96%)] active:scale-[0.97]"
             >
-              Explore Features
+              Download for Android
             </a>
           </div>
         </div>
@@ -86,6 +86,14 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="absolute bottom-8 inset-x-0 mx-auto w-fit flex flex-col items-center gap-2 nura-bounce">
+        <span className="text-xs text-[hsl(200_10%_46%)] tracking-widest uppercase">Scroll</span>
+        <svg width="20" height="28" viewBox="0 0 20 28" fill="none" className="text-[hsl(200_10%_46%)]">
+          <rect x="1" y="1" width="18" height="26" rx="9" stroke="currentColor" strokeWidth="1.5" />
+          <circle className="nura-scroll-dot" cx="10" cy="8" r="2.5" fill="currentColor" />
+        </svg>
       </div>
     </section>
   );

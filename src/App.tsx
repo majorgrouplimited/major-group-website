@@ -6,6 +6,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import NuraPage from './nura/NuraPage';
+import NuraPrivacy from './nura/PrivacyPolicy';
 import { motion } from 'motion/react';
 import {
   Smartphone,
@@ -278,6 +279,7 @@ export default function App() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/nura" element={<NuraPage />} />
+      <Route path="/nura/privacy" element={<NuraPrivacy />} />
       {/* sahingoz served as static HTML in public/sahingoz/ */}
     </Routes>
   );

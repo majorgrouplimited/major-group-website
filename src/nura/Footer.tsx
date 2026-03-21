@@ -7,7 +7,7 @@ const Footer = () => (
       </span>
       <p>&copy; {new Date().getFullYear()} Nura. All rights reserved.</p>
       <div className="flex gap-5">
-        <a href="#" className="hover:text-[hsl(200_19%_18%)] transition-colors">Privacy</a>
+        <a href="/nura/privacy" className="hover:text-[hsl(200_19%_18%)] transition-colors">Privacy</a>
         <a href="#" className="hover:text-[hsl(200_19%_18%)] transition-colors">Terms</a>
         <a href="#" className="hover:text-[hsl(200_19%_18%)] transition-colors">Contact</a>
       </div>
