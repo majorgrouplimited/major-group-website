@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+.nura-page {
+  --nura-hero-gradient: linear-gradient(160deg, hsl(120 7% 99%) 0%, hsl(130 20% 96%) 50%, hsl(120 7% 99%) 100%);
+  --nura-green-gradient: linear-gradient(135deg, hsl(123 54% 24%) 0%, hsl(130 45% 30%) 100%);
+  --nura-amber-gradient: linear-gradient(135deg, hsl(43 100% 50%) 0%, hsl(38 100% 55%) 100%);
+
+  font-family: 'Inter', system-ui, sans-serif;
+  color: hsl(200 19% 18%);
+  background: hsl(120 7% 99%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.nura-container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.nura-phone-mockup {
+  border-radius: 2.5rem;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  overflow: hidden;
+  border: 8px solid hsl(200 19% 18% / 0.1);
+}
+
+@keyframes nura-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes nura-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.nura-fade-in-up {
+  animation: nura-fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.nura-float {
+  animation: nura-float 6s ease-in-out infinite;
+}
+
+.nura-delay-100 { animation-delay: 100ms; }
+.nura-delay-200 { animation-delay: 200ms; }
+.nura-delay-300 { animation-delay: 300ms; }
+.nura-delay-400 { animation-delay: 400ms; }
+.nura-delay-500 { animation-delay: 500ms; }
