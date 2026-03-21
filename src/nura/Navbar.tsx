@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { ArrowLeft, Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -7,10 +7,17 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[hsl(120_7%_99%)]/80 backdrop-blur-lg border-b border-[hsl(120_10%_90%)]/50">
       <div className="nura-container flex items-center justify-between h-16">
-        <a href="/nura" className="flex items-center gap-2 text-xl font-bold text-[hsl(123_54%_24%)] tracking-tight" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
-          <img src="/nura/nura-icon.png" alt="Nura" className="w-8 h-8 rounded-lg" />
-          Nura
-        </a>
+        <div className="flex items-center gap-4">
+          <a href="/" className="flex items-center gap-1.5 text-sm text-[hsl(200_10%_46%)] hover:text-[hsl(200_19%_18%)] transition-colors">
+            <ArrowLeft className="w-4 h-4" />
+            major.
+          </a>
+          <span className="text-[hsl(120_10%_90%)]">|</span>
+          <a href="/nura" className="flex items-center gap-2 text-xl font-bold text-[hsl(123_54%_24%)] tracking-tight" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+            <img src="/nura/nura-icon.png" alt="Nura" className="w-8 h-8 rounded-lg" />
+            Nura
+          </a>
+        </div>
 
         <div className="hidden sm:flex items-center gap-6">
           <a href="#features" className="text-sm text-[hsl(200_10%_46%)] hover:text-[hsl(200_19%_18%)] transition-colors">
