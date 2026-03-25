@@ -119,13 +119,6 @@ const Services = () => {
 const Products = () => {
   const products = [
     {
-      icon: <img src="/harcio/icon.png" alt="Harcio" className="w-12 h-12 rounded-2xl object-cover" />,
-      title: "Harcio",
-      description: "AI-powered restaurant expense tracker and social platform with receipt analysis and gamification.",
-      tag: "Lifestyle",
-      link: "/harcio",
-    },
-    {
       icon: <Eye className="w-6 h-6" />,
       title: "Sahin Goz",
       description: "AI-powered drone monitoring system for construction site surveillance with real-time alerts and multi-zone management.",
@@ -145,6 +138,13 @@ const Products = () => {
       description: "AI-powered Islamic spiritual companion app with accurate prayer times, do'a collections, mood tracking, and multilingual support.",
       tag: "Lifestyle",
       link: "/nura",
+    },
+    {
+      icon: <img src="/harcio/icon.png" alt="Harcio" className="w-12 h-12 rounded-2xl object-cover" />,
+      title: "Harcio",
+      description: "AI-powered restaurant expense tracker and social platform with receipt analysis and gamification.",
+      tag: "Lifestyle",
+      link: "/harcio",
     },
   ];
 
