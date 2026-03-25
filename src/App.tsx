@@ -7,6 +7,8 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import NuraPage from './nura/NuraPage';
 import NuraPrivacy from './nura/PrivacyPolicy';
+import HarcioPage from './harcio/HarcioPage';
+import HarcioPrivacy from './harcio/PrivacyPolicy';
 import { motion } from 'motion/react';
 import {
   Smartphone,
@@ -116,6 +118,13 @@ const Services = () => {
 
 const Products = () => {
   const products = [
+    {
+      icon: <img src="/harcio/icon.png" alt="Harcio" className="w-12 h-12 rounded-2xl object-cover" />,
+      title: "Harcio",
+      description: "AI-powered restaurant expense tracker and social platform with receipt analysis and gamification.",
+      tag: "Lifestyle",
+      link: "/harcio",
+    },
     {
       icon: <Eye className="w-6 h-6" />,
       title: "Sahin Goz",
@@ -280,6 +289,8 @@ export default function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/nura" element={<NuraPage />} />
       <Route path="/nura/privacy" element={<NuraPrivacy />} />
+      <Route path="/harcio" element={<HarcioPage />} />
+      <Route path="/harcio/privacy-policy" element={<HarcioPrivacy />} />
       {/* sahingoz served as static HTML in public/sahingoz/ */}
     </Routes>
   );
